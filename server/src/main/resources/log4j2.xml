@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+  <Appenders>
+    <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+      <PatternLayout pattern="[%d{yy-MM-dd HH:mm:ss,SSS}] [%level] [%thread] [%class.%method:%line] %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="all">
+      <AppenderRef ref="ConsoleAppender" />
+    </Root>
+    <Logger name="x" additivity="false">
+      <AppenderRef ref="ConsoleAppender" level="debug" />
+    </Logger>
+    <Logger name="org" additivity="false">
+			  <AppenderRef ref="ConsoleAppender" level="warn" />
+		</Logger>
+    <Logger name="com" additivity="false">
+      <AppenderRef ref="ConsoleAppender" level="warn" />
+    </Logger>
+    <Logger name="org.hibernate.SQL" additivity="false">
+      <AppenderRef ref="ConsoleAppender" level="debug" />
+    </Logger>
+  </Loggers>
+</Configuration>
